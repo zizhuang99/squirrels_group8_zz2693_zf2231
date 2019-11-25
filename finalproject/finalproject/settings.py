@@ -25,12 +25,13 @@ SECRET_KEY = 'y46$f#z6*tcdq4g1n+@)&z6y-b)uq)_@0ld16b%pm@tiq4_44f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'map.apps.MapConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -113,7 +114,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+DATE_INPUT_FORMATS=['%d-%m-%Y']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
