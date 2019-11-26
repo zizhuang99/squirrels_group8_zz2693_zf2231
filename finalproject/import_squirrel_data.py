@@ -11,7 +11,4 @@ class Command(BaseCommand):
         with open(path, 'rt') as f:
             reader = csv.reader(f, dialect='excel')
             for row in reader:
-                squirrels = squirrels.objects.create(
-                    Longitude=row[0]
-                    Latitude=row[1]
-                )
+                squirrels = squirrels.objects.create()

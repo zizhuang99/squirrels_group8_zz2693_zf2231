@@ -13,14 +13,13 @@
 <div id="mymap"></div>
 <script type="text/javascript">
 	window.onload = function () {
-		var mymap = L.map('mymap').setView([ -73.965621,40.783255], 13);
+		var mymap = L.map('mymap').setView([40.783255,-73.965621], 13);
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
     	id: 'mapbox.streets',
     	accessToken: 'pk.eyJ1Ijoienp6eno5OSIsImEiOiJjazNkZ3lic2EwdHozM2VtYTgzbmxwdjFwIn0.6kPC0ZZdkZHvA2bAH4gdKA'
 		}).addTo(mymap);
-	
-	var marker = L.marker([40.7940823884086,-73.9561344937861]).addTo(mymap);
+		var marker = L.marker([40.79408239,-73.95613449]).addTo(mymap); 
 	}
 </script>
 
