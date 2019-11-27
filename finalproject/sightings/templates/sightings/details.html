@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>This is the squirrels sightings report</title>
+    </head>
+    <body>
+        <h1>Detail Page</h1>
+        <h2>This Squirrel's Unque ID is : {{sighting.Unique_Squirrel_Id}} </h2> 
+            {%if sighting%}
+	    <p>Its Shift is:{{sighting.Shift}}</p>
+	  
+            {% else %}
+                <p>There is no sightings at all</p>
+            {%endif%}
+	<button type='button'>Update as above!</button>
+        <button type="button">Delete!</button>
+    </body>
+</html>
