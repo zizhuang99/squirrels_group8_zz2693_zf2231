@@ -10,6 +10,8 @@
           width: 1200px;
         }
 </style>
+<h1>{{ squirrels.Unique_Squirrel_Id }}</h1>
+  
 <div id="mymap"></div>
 <script type="text/javascript">
 	window.onload = function () {
@@ -19,7 +21,13 @@
     	id: 'mapbox.streets',
     	accessToken: 'pk.eyJ1Ijoienp6eno5OSIsImEiOiJjazNkZ3lic2EwdHozM2VtYTgzbmxwdjFwIn0.6kPC0ZZdkZHvA2bAH4gdKA'
 		}).addTo(mymap);
-		var marker = L.marker([40.79408239,-73.95613449]).addTo(mymap); 
+		for (let i = 0; i < 10; i++) {
+      			var lat =squirrels_latitude[i]
+     			var lng =squirrels_longitude[i]
+
+		        var marker = L.marker([lat, lng]).addTo(mymap)
+
+		    };
 	}
 </script>
 

@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext as _
-
+from django.utils import timezone
 class squirrels(models.Model):
     Longitude= models.DecimalField(help_text='Longitude',max_digits=16,decimal_places=13)
     
@@ -8,52 +8,53 @@ class squirrels(models.Model):
     
     Unique_Squirrel_ID=models.CharField(help_text='Unique Squirrel ID',max_length=200,)
     
-  #  AM,PM='AM','PM'
-   # Shift=models.CharField(help_text='Shift',max_length=200, choices=((AM,'am'),(PM,'pm'),))
+    AM,PM='am','pm'
     
-    #Date=models.DateField(help_text='Date',max_length=200)
+    Shift=models.CharField(help_text='Shift',max_length=200, choices=((AM,'AM'),(PM,'PM'),),)
     
-   # adult,juvenile='adult','juvenile'
-   # age_choices=((adult,"Adult"),(juvenile, "Juvenile"),)
-   # Age=models.CharField(help_text='Age',max_length=200,choices=age_choices)
+    Date=models.DateField(help_text='Date',blank=True,null=True,max_length=200,default=timezone.now)
     
-  #  gray,cinnamon,black='gray','cinnamon','black'
-   # fur_choices=((gray,"Gray,"),(cinnamon, "Cinnamon"),(black,"Black"),)
-   # Primary_fur_color=models.CharField(help_text='Primary Fur Color',max_length=200,choices=fur_choices)
+    adult,juvenile='adult','juvenile'
+    age_choices=((adult,"Adult"),(juvenile, "Juvenile"),)
+    Age=models.CharField(help_text='Age',max_length=200,choices=age_choices,default=adult)
     
-  #  ground_plane,above_ground="ground plane","above ground"
-  #  location_choices=((ground_plane,"Ground Plane",),(above_ground,"Above Ground"),)    
-  #  Location=models.CharField(help_text='Location',max_length=200,choices=location_choices)
+    gray,cinnamon,black='gray','cinnamon','black'
+    fur_choices=((gray,"Gray,"),(cinnamon, "Cinnamon"),(black,"Black"),)
+    Primary_fur_color=models.CharField(help_text='Primary Fur Color',max_length=200,choices=fur_choices,default=gray)
     
-   # Specific_location=models.CharField(help_text='Specific Location',max_length=200,)
+    ground_plane,above_ground="ground plane","above ground"
+    location_choices=((ground_plane,"Ground Plane",),(above_ground,"Above Ground"),)    
+    Location=models.CharField(help_text='Location',max_length=200,choices=location_choices,default=ground_plane)
     
-   # Running=models.NullBooleanField(help_text='Running')
+    Specific_location=models.CharField(help_text='Specific Location',max_length=200,)
     
-  #  Chasing=models.NullBooleanField(help_text='Chasing')
+    Running=models.NullBooleanField(help_text='Running')
     
-   # Climbing=models.NullBooleanField(help_text='Climbing')
+    Chasing=models.NullBooleanField(help_text='Chasing')
     
-   # Eating=models.NullBooleanField(help_text='Eating')
+    Climbing=models.NullBooleanField(help_text='Climbing')
     
-   # Foraging=models.NullBooleanField(help_text='Foraging')
+    Eating=models.NullBooleanField(help_text='Eating')
     
-   # Other_Activities=models.CharField(help_text='Other Activities',max_length=200,)
+    Foraging=models.NullBooleanField(help_text='Foraging')
     
-   # Kuks=models.NullBooleanField(help_text='Kuks')
+    Other_Activities=models.CharField(help_text='Other Activities',max_length=200,)
     
-   # Quaas=models.NullBooleanField(help_text='Quaas')
+    Kuks=models.NullBooleanField(help_text='Kuks')
     
-   # Moans=models.NullBooleanField(help_text='Moans')
+    Quaas=models.NullBooleanField(help_text='Quaas')
     
-   # Tail_flags=models.NullBooleanField(help_text='Tail_flags')
+    Moans=models.NullBooleanField(help_text='Moans')
     
-   # Tail_twitches=models.NullBooleanField(help_text='Tail twitches')
+    Tail_flags=models.NullBooleanField(help_text='Tail_flags')
     
-   # Approaches=models.NullBooleanField(help_text='Approaches')
+    Tail_twitches=models.NullBooleanField(help_text='Tail twitches')
     
-   # Indifferent=models.NullBooleanField(help_text='Indifferent')
+    Approaches=models.NullBooleanField(help_text='Approaches')
     
-   # Runs_from=models.NullBooleanField(help_text='Runs from')
+    Indifferent=models.NullBooleanField(help_text='Indifferent')
+    
+    Runs_from=models.NullBooleanField(help_text='Runs from')
     
     def __str__(self):
         return self.Unique_Squirrel_ID
