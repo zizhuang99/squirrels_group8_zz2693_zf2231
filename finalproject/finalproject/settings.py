@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'map',
     'sightings',
+    'django_extensions',
     ]
 
 MIDDLEWARE = [

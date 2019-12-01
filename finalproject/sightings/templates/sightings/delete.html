@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+
+    <title>Delete page</title>
+    </head>
+
+    <body>
+
+        <div class="miniwrap2">
+            <h2>Are you sure you want to delete the following sighting?</h2>
+            <h4>ID: {{sighting.Unique_Squirrel_ID}}</h4>
+
+		<form  method="post">
+		{% csrf_token %}
+		<input id="action_id" type="hidden" name="action" value="Delete">
+		
+		<input type="submit" value="Delete" />
+		</form>
+
+        </div>
+
+    </body>
+</html>
+
+

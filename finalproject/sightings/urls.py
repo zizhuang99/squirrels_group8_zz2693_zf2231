@@ -1,8 +1,16 @@
 from django.urls import path
-from sightings.views import *
+from django.conf.urls import url, include
+from . import views
 
-urlpatterns=[
-        path('',index, name='sightings_list'),
-        path('<str:sighting>/',details,name='sighting_detail'),
-        path('add/',add,name='add_sighting'),
-        ]
+app_name='sightings'
+
+urlpatterns = [
+# root route to index method
+    path('', views.index, name = "index"),
+    path('add/',views.add,name = "add"),
+    path('stats/',views.stats,name='stats'),
+    path('<Unique_Squirrel_ID>/', views.details, name = "details"),
+    path('<Unique_Squirrel_ID>/update/', views.update, name = "update"),
+    path('<Unique_Squirrel_ID>/delete/',views.delete,name = 'delete'),
+
+]
