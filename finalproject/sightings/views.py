@@ -78,28 +78,28 @@ def update(request, Unique_Squirrel_ID):
 # updating user information
     sighting = squirrels.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
     if request.method=="POST":
-        sighting.Longitude=request.POST['Longitude'],
-        sighting.Latitude=request.POST['Latitude'],
-        sighting.Shift=request.POST['Shift'],
-        sighting.Date=request.POST['Date'],
-        sighting.Age=request.POST['Age'],
-        sighting.Primary_fur_color=request.POST['Primary_fur_color'],
-        sighting.Location=request.POST['Location'],
-        sighting.Specific_location=request.POST['Specific_location'],
-        sighting.Running=request.POST['Running'],
-        sighting.Chaseing=request.POST['Chasing'],
-        sighting.Climbing=request.POST['Climbing'],
-        sighting.Eating=request.POST['Eating'],
-        sighting.Foraging=request.POST['Foraging'],
-        sighting.Other_Activities=request.POST['Other_Activities'],
-        sighting.Kuks=request.POST['Kuks'],
-        sighting.Quaas=request.POST['Quaas'],
-        sighting.Moans=request.POST['Moans'],
-        sighting.Tail_flags=request.POST['Tail_flags'],
-        sighting.Tail_twitches=request.POST['Tail_twitches'],
-        sighting.Approaches=request.POST['Approaches'],
-        sighting.Indifferent=request.POST['Indifferent'],
-        sighting.Runs_from=request.POST['Runs_from'],
+        sighting.Longitude=request.POST['Longitude']
+        sighting.Latitude=request.POST['Latitude']
+        sighting.Shift=request.POST['Shift']
+        sighting.Date=request.POST['Date']
+        sighting.Age=request.POST['Age']
+        sighting.Primary_fur_color=request.POST['Primary_fur_color']
+        sighting.Location=request.POST['Location']
+        sighting.Specific_location=request.POST['Specific_location']
+        sighting.Running=request.POST['Running']
+        sighting.Chaseing=request.POST['Chasing']
+        sighting.Climbing=request.POST['Climbing']
+        sighting.Eating=request.POST['Eating']
+        sighting.Foraging=request.POST['Foraging']
+        sighting.Other_Activities=request.POST['Other_Activities']
+        sighting.Kuks=request.POST['Kuks']
+        sighting.Quaas=request.POST['Quaas']
+        sighting.Moans=request.POST['Moans']
+        sighting.Tail_flags=request.POST['Tail_flags']
+        sighting.Tail_twitches=request.POST['Tail_twitches']
+        sighting.Approaches=request.POST['Approaches']
+        sighting.Indifferent=request.POST['Indifferent']
+        sighting.Runs_from=request.POST['Runs_from']
        # sighting.save()
         context={'sighting':sighting}
         return render(request,'sightings/details.html', context)
