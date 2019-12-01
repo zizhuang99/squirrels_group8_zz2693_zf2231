@@ -19,7 +19,8 @@ def stats(request):
     stats2=squirrels.objects.filter(Runs_from=True).count()
     stats3=squirrels.objects.filter(Climbing=True).count()
     stats4=squirrels.objects.filter(Primary_fur_color='Black').count()
-    context={'stats1':stats1,'stats2':stats2,'stats3':stats3,'stats4':stats4,}
+    stats5=squirrels.objects.filter(Chasing=True).count()
+    context={'stats1':stats1,'stats2':stats2,'stats3':stats3,'stats4':stats4,'stats5':stats5,}
     return render(request,'sightings/stats.html',context)
 def add(request):
     if request.method=="POST":
