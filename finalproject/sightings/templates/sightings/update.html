@@ -36,11 +36,23 @@
 	<h4>Other_Activites: </h4>
 	<input type='text' name='Other_Activities' value={{sighting.Other_Activities}}>
 	<h4>Running: </h4>
-	<input type='checkbox' name='Running' value='True'> True<br>
-	<input type='checkbox' name='Running' value='False' checked> False<br>
-	<h4>Chasing: </h4>
-	<input type='checkbox' name='Chasing' value='True'> True<br>
-	<input type='checkbox' name='Chasing' value='False'checked> False<br>
+	{%if sighting.Running%}
+		<input type='checkbox' name='Running' value='True'checked> True<br>
+		<input type='checkbox' name='Running' value='False'> False<br>
+	{%else%}
+		<input type='checkbox' name='Running' value='True'> True <br>
+		<input type='checkbox' name='Running' value='False'checked> False <br>
+	{%endif}
+
+	{%if sighting.Chasing%}
+		<h4>Chasing: </h4>
+	    	<input type='checkbox' name='Chasing' value='True' checked> True<br>
+	    	<input type='checkbox' name='Chasing' value='False'> False<br>
+	{%else%}
+		<h4>Chasing: </h4>
+		<input type='checkbox' name='Chasing' value='True' > True<br>
+		<input type='checkbox' name='Chasing' value='False'checked> False<br>
+	{%endif%}
 	<h4>Climbing: </h4>
 	<input type='checkbox' name='Climbing' value='True'> True<br>
 	<input type='checkbox' name='Climbing' value='False'checked> False<br>
