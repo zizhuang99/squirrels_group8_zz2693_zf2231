@@ -9,7 +9,7 @@
   	<div class="miniwrap">
     	<form action="{% url 'sightings:update' Unique_Squirrel_ID=sighting.Unique_Squirrel_ID %}" method="POST" id="updateform">
         {% csrf_token %}
-        <h1>Edit User {{ sighting.Unique_Squirrel_ID}}</h1>
+        <h1> ID: {{ sighting.Unique_Squirrel_ID}}</h1>
 	<h4>Longitude:</h4>
 	<input type='number' name='Longitude' value={{sighting.Longitude}}>
 	<h4>Latitude: </h4>
