@@ -8,7 +8,7 @@ class squirrels(models.Model):
     
     Unique_Squirrel_ID=models.CharField(help_text='Unique Squirrel ID',max_length=200,primary_key=True,)
     
-    AM,PM='am','pm'
+    AM,PM='AM','PM'
     
     Shift=models.CharField(help_text='Shift',max_length=200, choices=((AM,'AM'),(PM,'PM'),),)
     
@@ -19,7 +19,7 @@ class squirrels(models.Model):
     Age=models.CharField(help_text='Age',max_length=200,choices=age_choices,default=adult)
     
     gray,cinnamon,black='gray','cinnamon','black'
-    fur_choices=((gray,"Gray,"),(cinnamon, "Cinnamon"),(black,"Black"),)
+    fur_choices=((gray,"Gray"),(cinnamon, "Cinnamon"),(black,"Black"),)
     Primary_fur_color=models.CharField(help_text='Primary Fur Color',max_length=200,choices=fur_choices,default=gray)
     
     ground_plane,above_ground="ground plane","above ground"
