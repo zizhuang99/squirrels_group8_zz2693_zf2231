@@ -7,11 +7,6 @@ def index(request):
     sightings=squirrels.objects.all()
     context={'sightings':sightings,} 
     return render(request,"sightings/index.html",context)
-# Create your views here.
-#def details(request,Unique_Squirrel_ID):
- #   sighting=squirrels.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
-  #  context={'sighting':sighting,}
-  #  return render(request,"sightings/details.html",context)
 
 def stats(request):
     stats1=squirrels.objects.all().count()
@@ -33,15 +28,6 @@ def add(request):
     context={'form':form}
     return render(request,'sightings/add.html',context)
 
-
-#def delete(request, Unique_Squirrel_ID):
- #   sighting=squirrels.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
-  #  if request.method=='POST':
-   #     sighting.delete()
-    #    return redirect('sightings:index')
-  #  else:
-   #     context={'sighting':sighting}
-    #    return(render(request,'sightings/delete.html',context))
 
 def update(request, Unique_Squirrel_ID):
 # updating user information
