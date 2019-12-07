@@ -34,14 +34,14 @@ def add(request):
     return render(request,'sightings/add.html',context)
 
 
-def delete(request, Unique_Squirrel_ID):
-    sighting=squirrels.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
-    if request.method=='POST':
-        sighting.delete()
-        return redirect('sightings:index')
-    else:
-        context={'sighting':sighting}
-        return(render(request,'sightings/delete.html',context))
+#def delete(request, Unique_Squirrel_ID):
+ #   sighting=squirrels.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
+  #  if request.method=='POST':
+   #     sighting.delete()
+    #    return redirect('sightings:index')
+  #  else:
+   #     context={'sighting':sighting}
+    #    return(render(request,'sightings/delete.html',context))
 
 def update(request, Unique_Squirrel_ID):
 # updating user information
