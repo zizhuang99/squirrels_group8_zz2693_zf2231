@@ -29,7 +29,7 @@ class squirrels(models.Model):
     location_choices=((ground_plane,"Ground Plane"),(above_ground,"Above Ground"),)    
     Location=models.CharField(help_text='Location',max_length=200,choices=location_choices,default=ground_plane)
     
-    Specific_location=models.CharField(help_text='Specific Location',max_length=200,)
+    Specific_location=models.CharField(help_text='Specific Location',max_length=200,blank=True)
     
     Running=models.NullBooleanField(help_text='Running')
     
