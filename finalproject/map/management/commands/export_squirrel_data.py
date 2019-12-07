@@ -5,9 +5,9 @@ from django.utils.encoding import smart_str
 class Command(BaseCommand):
     help = 'Load a questions csv file into the database'
     def add_arguments(self, parser):
-        parser.add_argument('positionArg')
+        parser.add_argument('csv_file')
     def handle(self,*args,**kargs):
-        path=kargs['positionArg']
+        path=kargs['csv_file']
         with open(path, 'w', newline='') as csvfile:
             spamwriter = csv.writer(csvfile)
             spamwriter.writerow([
