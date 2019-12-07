@@ -9,7 +9,7 @@ class squirrels(models.Model):
     
     Latitude=models.DecimalField(help_text='Latitude',max_digits=16,decimal_places=13)
     
-    Unique_Squirrel_ID=models.CharField(help_text='Unique Squirrel ID',max_length=200)
+    Unique_Squirrel_ID=models.CharField(help_text='Unique Squirrel ID',max_length=200,unique=True)
     
     AM,PM='AM','PM'
     
