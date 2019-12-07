@@ -1,29 +1,32 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from django.utils import timezone
+
 class squirrels(models.Model):
+   
+    
     Longitude= models.DecimalField(help_text='Longitude',max_digits=16,decimal_places=13)
     
     Latitude=models.DecimalField(help_text='Latitude',max_digits=16,decimal_places=13)
     
-    Unique_Squirrel_ID=models.CharField(help_text='Unique Squirrel ID',max_length=200,primary_key=True,)
+    Unique_Squirrel_ID=models.CharField(help_text='Unique Squirrel ID',max_length=200,primary_key=False)
     
-    AM,PM='am','pm'
+    AM,PM='AM','PM'
     
     Shift=models.CharField(help_text='Shift',max_length=200, choices=((AM,'AM'),(PM,'PM'),),)
     
     Date=models.DateField(help_text='Date',blank=True,null=True,max_length=200,default=timezone.now)
     
-    adult,juvenile='adult','juvenile'
+    adult,juvenile='Adult','Juvenile'
     age_choices=((adult,"Adult"),(juvenile, "Juvenile"),)
     Age=models.CharField(help_text='Age',max_length=200,choices=age_choices,default=adult)
     
-    gray,cinnamon,black='gray','cinnamon','black'
-    fur_choices=((gray,"Gray,"),(cinnamon, "Cinnamon"),(black,"Black"),)
+    gray,cinnamon,black='Gray','Cinnamon','Black'
+    fur_choices=((gray,"Gray"),(cinnamon, "Cinnamon"),(black,"Black"),)
     Primary_fur_color=models.CharField(help_text='Primary Fur Color',max_length=200,choices=fur_choices,default=gray)
     
-    ground_plane,above_ground="ground plane","above ground"
-    location_choices=((ground_plane,"Ground Plane",),(above_ground,"Above Ground"),)    
+    ground_plane,above_ground="Ground Plane","Above Ground"
+    location_choices=((ground_plane,"Ground Plane"),(above_ground,"Above Ground"),)    
     Location=models.CharField(help_text='Location',max_length=200,choices=location_choices,default=ground_plane)
     
     Specific_location=models.CharField(help_text='Specific Location',max_length=200,)
@@ -55,6 +58,6 @@ class squirrels(models.Model):
     Indifferent=models.NullBooleanField(help_text='Indifferent')
     
     Runs_from=models.NullBooleanField(help_text='Runs from')
-    
+   
     def __str__(self):
         return self.Unique_Squirrel_ID
