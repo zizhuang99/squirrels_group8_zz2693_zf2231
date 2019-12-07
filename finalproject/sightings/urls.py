@@ -9,8 +9,8 @@ urlpatterns = [
     path('', views.index, name = "index"),
     path('add/',views.add,name = "add"),
     path('stats/',views.stats,name='stats'),
-    path('<Unique_Squirrel_ID>/', views.details, name = "details"),
-    path('<Unique_Squirrel_ID>/update/', views.update, name = "update"),
+  #  path('<Unique_Squirrel_ID>/', views.details, name = "details"),
+    path('<Unique_Squirrel_ID>/', views.update, name = "update"),
     path('<Unique_Squirrel_ID>/delete/',views.delete,name = 'delete'),
 
 ]

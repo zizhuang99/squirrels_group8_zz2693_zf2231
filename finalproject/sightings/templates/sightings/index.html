@@ -1,22 +1,20 @@
 <html>
     <head>
-        <title>This is the squirrels sightings report</title>
+        <title>This is the index page of our squirrels sightings report!</title>
     </head>
     <body>
 
-
         <h1>squirrels sightings report</h1>
 
-	<h2></h2>
 	<a href='{%url 'sightings:add'%}'>Add new data!</a>
 	<a href='{% url 'sightings:stats'%}'>See some stats!</a>
 
-        <h3>These is a list of all sightings. Click the link to see details! </h3> 
+        <h3>These is a list of all sightings. Click each link to see details! </h3> 
             {%if sightings%}
                 <ul>
                     {%for sighting in sightings%}
-                        <li>{{sighting}}</li>
-			<a href='/sightings/{{sighting.Unique_Squirrel_ID}}/'>See details about it and edit it!</a>
+		    <li>{{sighting}}{{sighting.Shift}}</li>
+			<a href='/sightings/{{sighting.Unique_Squirrel_ID}}/'>See details about it, delete it or edit it!</a>
                    
 		    {%endfor%}
                 </ul>

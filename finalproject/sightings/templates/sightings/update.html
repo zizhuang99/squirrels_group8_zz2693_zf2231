@@ -1,87 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Users Edit page</title>
+        <title>Sightings Update  page</title>
     </head>
 
     <body>
 
   	<div class="miniwrap">
-    	<form action="{% url 'sightings:update' Unique_Squirrel_ID=sighting.Unique_Squirrel_ID %}" method="POST" id="updateform">
-        {% csrf_token %}
-        <h1>Edit User {{ sighting.Unique_Squirrel_ID}}</h1>
-	<h4>Longitude:</h4>
-	<input type='number' name='Longitude' value={{sighting.Longitude}}>
-	<h4>Latitude: </h4>
-	<input type='number' name='Latitude' value={{sighting.Latitude}}>
-	<h4>Shift: </h4>
-	<input type='checkbox' name='Shift' value='AM'> AM<br>
-	<input type='checkbox' name='Shift' value='PM'> PM<br>
-	<h4>Date: </h4>
-	<input type='date' name='Date' value={{sighting.Date}}><br>
-	<h4>Primary_fur_color: </h4>
-	<input type='checkbox' name='Primary_fur_color' value='Black'> Black<br>
-	<input type='checkbox' name='Primary_fur_color' value='Gray'> Gray <br>
-	<input type='checkbox' name='Primary_fur_color' value='Cinnamon'> Cinnamon<br>
-	<h4>Location: </h4>
-	<input type='checkbox' name='Location' value='Above Ground'> Above Ground<br>
-	<input type='checkbox' name='Location' value='Ground Plane'> Ground Plane <br>
-	
-	<h4>Age: </h4>
-	<input type='checkbox' name='Age' value='Juvenile'> Juvenile<br>
-	<input type='checkbox' name='Age' value='Adult'> Adult<br>
-
-        <h4>Specific_location:</h4>
-        <input type="text" name="Specific_location" value={{sighting.Specific_location}}>
-	<h4>Other_Activites: </h4>
-	<input type='text' name='Other_Activities' value={{sighting.Other_Activities}}>
-	<h4>Running: </h4>
-	<input type='checkbox' name='Running' value='True'> True<br>
-	<input type='checkbox' name='Running' value='False'> False<br>
-	<h4>Chasing: </h4>
-	<input type='checkbox' name='Chasing' value='True'> True<br>
-	<input type='checkbox' name='Chasing' value='False'> False<br>
-	<h4>Climbing: </h4>
-	<input type='checkbox' name='Climbing' value='True'> True<br>
-	<input type='checkbox' name='Climbing' value='False'> False<br>
-	<h4>Eating: </h4>
-	<input type='checkbox' name='Eating' value='True'> True<br>
-	<input type='checkbox' name='Eating' value='False'> False<br>
-	<h4>Foraging: </h4>
-	<input type='checkbox' name='Foraging' value='True'> True<br>
-	<input type='checkbox' name='Foraging' value='False'> False<br>
-	<h4>Quaas: </h4>
-	<input type='checkbox' name='Quaas' value='True'> True<br>
-	<input type='checkbox' name='Quaas' value='False'> False<br>
-	<h4>Kuks: </h4>
-	<input type='checkbox' name='Kuks' value='True'> True<br>
-	<input type='checkbox' name='Kuks' value='False'> False<br>
-	<h4>Moans: </h4>
-	<input type='checkbox' name='Moans' value='True'> True<br>
-	<input type='checkbox' name='Moans' value='False'> False<br>
-	<h4>Tail_flags: </h4>
-	<input type='checkbox' name='Tail_flags' value='True'> True<br>
-	<input type='checkbox' name='Tail_flags' value='False'> False<br>
-	<h4>Tail_twitches: </h4>
-	<input type='checkbox' name='Tail_twitches' value='True'> True<br>
-	<input type='checkbox' name='Tail_twitches' value='False'> False<br>
-	<h4>Approaches: </h4>
-	<input type='checkbox' name='Approaches' value='True'> True<br>
-	<input type='checkbox' name='Approaches' value='False'> False<br>
-	<h4>Indifferent: </h4>
-	<input type='checkbox' name='Indifferent' value='True'> True<br>
-	<input type='checkbox' name='Indifferent' value='False'> False<br>
-	<h4>Runs_from: </h4>
-	<input type='checkbox' name='Runs_from' value='True'> True<br>
-	<input type='checkbox' name='Runs_from' value='False'> False<br>
+    	<form  method="POST" id="updateform">
+        	{% csrf_token %}
+		{{form.as_p}}
+		
+        <input type="submit" name='Submit'>
         <br>
-        <br>
-<!-- This button sends the edited user data to update function via the form action, to be put in the database -->
-        <button type="submit" form="updateform" value="Update">Update</button>
-        <br>
-        <br>
-       	<a href="{% url 'sightings:index' %}">go back to the index page</a>
     	</form>
+	<h4>After clicking submit, you will be linked back to the index page.</h4>
+	<h4>Here are additional function: delete</h4>
+	<h4>add '/delete' on your brower to delete this sighting.</h4>
     	</div> 
     </body>
 </html>

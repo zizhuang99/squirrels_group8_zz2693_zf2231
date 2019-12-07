@@ -21,7 +21,10 @@ class squirrels(models.Model):
     age_choices=((adult,"Adult"),(juvenile, "Juvenile"),)
     Age=models.CharField(help_text='Age',max_length=200,choices=age_choices,default=adult)
     
+<<<<<<< HEAD
     gray,cinnamon,black='Gray','Cinnamon','Black'
+=======
+>>>>>>> 96fbed1df2d3b49ff120773b636b6b5ce081e8e7
     fur_choices=((gray,"Gray"),(cinnamon, "Cinnamon"),(black,"Black"),)
     Primary_fur_color=models.CharField(help_text='Primary Fur Color',max_length=200,choices=fur_choices,default=gray)
     
