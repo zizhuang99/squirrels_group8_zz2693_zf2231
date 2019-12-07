@@ -7,37 +7,42 @@ class Command(BaseCommand):
     help = 'Load a questions csv file into the database'
 
     def add_arguments(self, parser):
-        parser.add_argument('positionArg')
+        parser.add_argument('csv_file')
 
     def handle(self,*args,**kargs):
-        path=kargs['positionArg']
-        with open(path, 'rt') as f:
-            reader = csv.DictReader(f, dialect='excel')
-            for row in reader:
-                squirrels.objects.create(
-                    Unique_Squirrel_ID=row['unique_squirrel_id'],
-                    Longitude=row['x'],
-                    Latitude=row['y'],
-                    Shift=row['shift'],
-                    Date=row['date'][4:]+'-'+row['date'][:2]+'-'+row['date'][2:4],
-                    Age=row['age'],
-                    Primary_fur_color=row['primary_fur_color'],
-                    Location=row['location'],
-                    Specific_location=row['specific_location'],
-                    Running=row['running'].capitalize(),
-                    Chasing=row['chasing'].capitalize(),
-                    Climbing=row['climbing'].capitalize(),
-                    Eating=row['eating'].capitalize(),
-                    Foraging=row['foraging'].capitalize(),
-                    Other_Activities=row['other_activities'],
-                    Kuks=row['kuks'].capitalize(),
-                    Quaas=row['quaas'].capitalize(),
-                    Moans=row['moans'].capitalize(),
-                    Tail_flags=row['tail_flags'].capitalize(),
-                    Tail_twitches=row['tail_twitches'].capitalize(),
-                    Approaches=row['approaches'].capitalize(),
-                    Indifferent=row['indifferent'].capitalize(),
-                    Runs_from=row['runs_from'].capitalize()
+        path=kargs['csv_file']
+        with open(path) as f:
+            reader = csv.DictReader(f)
+            data=list(reader)
+            for row in data:
+                try:
+                    p=squirrels(
+                        Unique_Squirrel_ID=row['Unique Squirrel ID'],
+                        Longitude=row['X'],
+                        Latitude=row['Y'],
+                        Shift=row['Shift'],
+                        Date=row['Date'][4:]+'-'+row['Date'][:2]+'-'+row['Date'][2:4],
+                        Age=row['Age'],
+                        Primary_fur_color=row['Primary Fur Color'],
+                        Location=row['Location'],
+                        Specific_location=row['Specific Location'],
+                        Running=row['Running'].capitalize(),
+                        Chasing=row['Chasing'].capitalize(),
+                        Climbing=row['Climbing'].capitalize(),
+                        Eating=row['Eating'].capitalize(),
+                        Foraging=row['Foraging'].capitalize(),
+                        Other_Activities=row['Other Activities'],
+                        Kuks=row['Kuks'].capitalize(),
+                        Quaas=row['Quaas'].capitalize(),
+                        Moans=row['Moans'].capitalize(),
+                        Tail_flags=row['Tail flags'].capitalize(),
+                        Tail_twitches=row['Tail twitches'].capitalize(),
+                        Approaches=row['Approaches'].capitalize(),
+                        Indifferent=row['Indifferent'].capitalize(),
+                        Runs_from=row['Runs from'].capitalize(),
 
                     
-                    )
+                        )
+                    p.save()
+                except:
+                    pass

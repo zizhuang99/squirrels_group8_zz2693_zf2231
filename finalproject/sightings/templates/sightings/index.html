@@ -13,8 +13,8 @@
             {%if sightings%}
                 <ul>
                     {%for sighting in sightings%}
-		    <li>{{sighting}}{{sighting.Shift}}</li>
-			<a href='/sightings/{{sighting.Unique_Squirrel_ID}}/'>See details about it, delete it or edit it!</a>
+		    <li>{{sighting}}</li>
+		    <a href='{% url 'sightings:update' Unique_Squirrel_ID=sighting.Unique_Squirrel_ID%}'>Update it</a>
                    
 		    {%endfor%}
                 </ul>

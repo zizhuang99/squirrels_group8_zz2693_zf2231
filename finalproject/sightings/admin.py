@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Sightings
+from map.models import squirrels
 
-admin.site.register(Sightings)
+admin.site.register(squirrels)
 # Register your models here.
