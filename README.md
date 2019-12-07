@@ -5,6 +5,7 @@ We biult an application to track of all the known squirrels at Central Park. Use
 
 ## 2. Import and export squirrels data.
 Users can import and export data via command line.The file path should be specified at the command line after the name of the management command.  
+Note: Here we already prepared squirrel dataset in home directory for users to import. The name of the dataset is 2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv  
 
     #import data  
     $ python manage.py import_squirrel_data /path/to/file.csv  
